@@ -2,3 +2,22 @@ body {
     background-color: rgb(26, 29, 41);
     color: rgb(249, 249, 249);
 }
+
+@font-face {
+    font-family: Amiwos;
+    src: url('assets/fonts/Havertize.otf');
+}
+
+@font-face {
+    font-family: Averange;
+    src: url('assets/fonts/Metropolis-Regular.otf');
+}
+
+.logo {
+    font-family: Amiwos;
+    font-size: 40px;
+}
+
+p {
+    font-family: Averange;
+}
