@@ -8,9 +8,9 @@ import { AuthGuard } from './_helpers/auth.guard';
 let userLang = navigator.language.toLowerCase();
 console.log(userLang);
 const routes: Routes = [
-  { path: userLang + '/home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: userLang + '/login', component: LoginComponent },
-  { path: '**', pathMatch: 'full', redirectTo: userLang + '/home' }
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({
