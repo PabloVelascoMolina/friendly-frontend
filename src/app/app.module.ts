@@ -6,6 +6,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
+import { ArchwizardModule } from 'angular-archwizard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,14 +28,15 @@ import { LoginComponent } from './components/shared/login/login.component';
 		AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ArchwizardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
+    //fakeBackendProvider
   ],
 	bootstrap: [AppComponent]
 })

@@ -1,6 +1,15 @@
 body {
-    background-color: rgb(26, 29, 41);
-    color: rgb(249, 249, 249);
+    background-color: rgb(26, 29, 41) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: rgb(249, 249, 249) !important;
 }
 
 @font-face {
@@ -60,4 +69,59 @@ footer .links a:hover {
     text-align: center;
     font-size: 19px;
     color: #969696;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-top: 2px solid #07d;
+    border-right: 2px solid transparent;
+    animation: spinner .6s linear infinite;
+}
+
+.input-es {
+    backdrop-filter: blur(50px);
+    background-color: rgb(49, 52, 62);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    caret-color: rgb(2, 231, 245);
+    color: rgb(249, 249, 249);
+    font-size: 15px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    height: 48px;
+    letter-spacing: normal;
+    line-height: 1.53;
+    margin: 0px;
+    outline: none;
+    padding: 7px 12px;
+    transition: all 0.1s ease 0s;
+    width: 100%;
+}
+
+.input-es:focus,
+.inut-es:active {
+    outline: none;
+    border: 1px solid rgba(249, 249, 249, 0.3);
+}
+
+.is-invalid {
+    border: 1px solid rgb(255, 85, 76);
+}
+
+.card {
+    background: transparent !important;
+    border: 0 !important;
+    transition: transform 0.2s ease-in-out;
 }
