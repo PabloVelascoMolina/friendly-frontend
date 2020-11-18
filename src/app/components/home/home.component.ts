@@ -3,6 +3,7 @@ import { first } from 'rxjs/operators';
 
 import { User } from '../../_models/user';
 import { UserService } from '../../_services/user.service';
+import { AuthenticationService } from '../../_services/authentication.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,16 +12,20 @@ import { UserService } from '../../_services/user.service';
 export class HomeComponent implements OnInit {
 
   loading = false;
-  users: User[];
+  user: User[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.userService.getAll().pipe(first()).subscribe(users => {
+    this.userService.getUser().pipe(first()).subscribe(users => {
       this.loading = false;
-      this.users = users;
+      this.user = users;
     });
+  }
+
+  logout() {
+    this.authenticationService.logout();
   }
 
 }
