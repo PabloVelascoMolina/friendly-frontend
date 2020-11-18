@@ -30,6 +30,15 @@ export class AuthenticationService {
       }));
   }
 
+  register(name: string, email:string, password:string, c_password:string) {
+    return this.http.post<any>(`${environment.apiUrl}/api/register`, {name, email, password, c_password})
+      .pipe(map(user => {
+        localStorage.setItem('currentUser', JSON.stringify(user.data));
+        this.currentUserSubject.next(user.data);
+        return user;
+      }));
+  }
+
   logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
