@@ -6,8 +6,6 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
-import { ArchwizardModule } from 'angular-archwizard';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,6 +13,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/shared/login/login.component';
 import { RegisterComponent } from './components/shared/register/register.component';
+import { ProductsComponent } from './components/shared/products/products.component';
+import { InfiniteScrollModule } from '@thisissoon/angular-infinite-scroll';
 
 @NgModule({
 	declarations: [
@@ -23,7 +23,8 @@ import { RegisterComponent } from './components/shared/register/register.compone
 		NavbarComponent,
 		FooterComponent,
 		LoginComponent,
-		RegisterComponent
+		RegisterComponent,
+		ProductsComponent
 	],
 	imports: [
 		BrowserModule,
@@ -31,7 +32,7 @@ import { RegisterComponent } from './components/shared/register/register.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ArchwizardModule
+    InfiniteScrollModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

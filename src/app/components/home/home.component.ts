@@ -11,16 +11,19 @@ import { AuthenticationService } from '../../_services/authentication.service';
 })
 export class HomeComponent implements OnInit {
 
-  loading = false;
-  user: User[];
+  loadingUserInfo = false;
+  userInfo: any;
+  AvatarURL: string;
 
   constructor(private userService: UserService, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.loading = true;
-    this.userService.getUser().pipe(first()).subscribe(users => {
-      this.loading = false;
-      this.user = users;
+    this.loadingUserInfo = true;
+
+    this.userService.getUser().pipe(first()).subscribe((users: any) => {
+      this.loadingUserInfo = false;
+      this.userInfo = users.user;
+      this.AvatarURL = 'http://localhost:8000/storage/avatars/' + users.user.id + '/' + users.user.avatar;
     });
   }
 

@@ -1,0 +1,13 @@
+<h6>Show products</h6>
+<!---<div *ngIf="loadingProducts" class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+<div *ngFor="let products of product">
+    <p>{{ products | json }}</p>
+</div>--->
+
+<div id="infinite-scroll" class="foo" snInfiniteScroll (scrollEnd)="onScrollEnd()" [offset]="15" [disabled]="disabled">
+    <ul>
+        <li *ngFor="let item of list" style="color: #fff;">{{ item | json }}</li>
+    </ul>
+</div>

@@ -3,10 +3,13 @@
     <h4 class="card-header">You're logged in with Angular 10 & JWT!!</h4>
     <div class="card-body">
         <h6>Users from secure api end point</h6>
-        <div *ngIf="loading" class="spinner-border text-light" role="status">
+        <div *ngIf="loadingUserInfo" class="spinner-border text-light" role="status">
             <span class="sr-only">Loading...</span>
         </div>
-        <p>{{ user | json }}</p>
+        <p>{{ userInfo | json }}</p>
+        <img [src]="AvatarURL" width="30">
+
+        <app-products></app-products>
     </div>
     <button (click)="logout()" class="btn btn-primary">Cerrar sesion</button>
 </div>
