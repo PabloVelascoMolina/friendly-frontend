@@ -1,15 +1,13 @@
-<h1 class="logo">amiwos</h1>
 <div class="card mt-4">
-    <h4 class="card-header">You're logged in with Angular 10 & JWT!!</h4>
-    <div class="card-body">
-        <h6>Users from secure api end point</h6>
-        <div *ngIf="loadingUserInfo" class="spinner-border text-light" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <p>{{ userInfo | json }}</p>
-        <img [src]="AvatarURL" width="30">
+    <h4>You're logged in with Angular 10 & JWT!!</h4>
 
-        <app-products></app-products>
-    </div>
-    <button (click)="logout()" class="btn btn-primary">Cerrar sesion</button>
+    <h6>Users from secure api end point</h6>
+    <svg *ngIf="loadingUserInfo" class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+    <p>{{ userInfo | json }}</p>
+
+    <app-products></app-products>
+
+    <!--<button (click)="logout()" class="btn btn-primary">Cerrar sesion</button>-->
 </div>

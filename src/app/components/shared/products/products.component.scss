@@ -7,3 +7,51 @@
 li {
     display: block;
 }
+
+.product {
+    backface-visibility: hidden;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    transform: scale(1, 1) translateZ(0px);
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    width: 100%;
+    background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42)) 0% 0% / cover;
+    background-image: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/CD5F426665AC8EF008E14E4778C905095205DDC894C56F422537B4DDFF9435F8/scale?width=400&aspectRatio=1.78&format=jpeg);
+    margin-bottom: 20px;
+    height: 185px;
+    padding: 12px;
+}
+
+.product::after {
+    border-radius: 4px;
+    border: 4px solid rgba(255, 255, 255, 0);
+    bottom: 0px;
+    content: "";
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transition: border 300ms ease-out 0s;
+}
+
+.product:hover,
+.product:focus,
+.product:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px, rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+    transform: scale(1.05, 1.05) translateZ(0px) translate3d(0px, 0px, 0px);
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+}
+
+.product:hover::after,
+.product:focus::after,
+.product:focus-within::after {
+    border: 4px solid rgba(249, 249, 249, 0.8);
+}

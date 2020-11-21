@@ -44,4 +44,9 @@ export class AuthenticationService {
     this.currentUserSubject.next(null);
     this.route.navigate(['/login']);
   }
+
+  get isAuthenticated(): boolean {
+    return !!(this.currentUserValue);
+  }
+
 }
