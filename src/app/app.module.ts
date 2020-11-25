@@ -15,6 +15,10 @@ import { LoginComponent } from './components/shared/login/login.component';
 import { RegisterComponent } from './components/shared/register/register.component';
 import { ProductsComponent } from './components/shared/products/products.component';
 import { InfiniteScrollModule } from '@thisissoon/angular-infinite-scroll';
+import { PeopleComponent } from './components/shared/people/people.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
+import { DontputPipe } from './_pipes/dontput.pipe';
 
 @NgModule({
 	declarations: [
@@ -24,7 +28,11 @@ import { InfiniteScrollModule } from '@thisissoon/angular-infinite-scroll';
 		FooterComponent,
 		LoginComponent,
 		RegisterComponent,
-		ProductsComponent
+		ProductsComponent,
+		PeopleComponent,
+		ProfileComponent,
+		ModalComponent,
+		DontputPipe,
 	],
 	imports: [
 		BrowserModule,

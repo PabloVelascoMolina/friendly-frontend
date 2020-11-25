@@ -1,13 +1,11 @@
 .site-header {
     position: absolute;
-    z-index: 10;
+    z-index: -1;
     width: 100%;
     left: 0;
     top: 0;
-    background: #000;
-    border-bottom: 1px solid rgba(66, 82, 109, 0.5);
-    transition: margin-top .3s ease-in-out;
-    background: transparent;
+    transition: margin-top 0.3s ease-in-out;
+    height: 100%;
 }
 
 .site-header__utility {
@@ -34,10 +32,6 @@
     display: inline-flex;
     align-items: center;
     position: relative;
-}
-
-.site-header__utility .js-timezone-set {
-    transition: opacity .3s ease-in-out;
 }
 
 .site-header__utility .globe {
@@ -141,6 +135,7 @@ a,
 .site-branding {
     width: 150px;
     margin-right: 12px;
+    z-index: 1;
 }
 
 .site-branding a {
@@ -182,7 +177,7 @@ a,
     padding: 4px;
     transition: color .3s ease-in-out;
     position: relative;
-    height: 80px;
+    height: 37px;
 }
 
 .desktop-navigation .has-sub-nav>div:after,
@@ -266,24 +261,6 @@ a,
     display: none !important;
 }
 
-@media (min-width: 1012px) {
-    .site-header:after {
-        backdrop-filter: blur(24px);
-    }
-}
-
-.site-header:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: rgba(0, 8, 20, 0.6);
-    backdrop-filter: blur(6px);
-}
-
 .desktop-navigation .has-sub-nav>div:hover,
 .desktop-navigation a:not(.button):hover {
     color: #959da5;
@@ -296,14 +273,6 @@ a,
 .site-header .icon-link--heart.is-disabled span {
     opacity: 0.4;
     color: #fff;
-}
-
-.site-header .icon-link--heart span {
-    transition: opacity .3s ease-in-out;
-}
-
-.site-header__utility .js-timezone-set:hover {
-    opacity: 0.6;
 }
 
 .site-header .icon-link--heart.is-disabled:hover:after {
@@ -359,4 +328,40 @@ a,
     right: 0px;
     top: 0px;
     transition: border 250ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+}
+
+.border-50>img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.border-50>span {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.items {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px;
+    line-height: 22px;
+    transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    color: #fff;
+}
+
+.items:hover {
+    background: #ffffff12;
+    color: #FFF;
 }

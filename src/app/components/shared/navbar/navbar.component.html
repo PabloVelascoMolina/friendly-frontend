@@ -1,44 +1,23 @@
 <header class="site-header" id="site-header">
     <div class="site-header__utility">
-        <ng-container *ngIf="isAuthenticated; else guest">
-            <a class="icon-link icon-link--heart is-disabled" href="/schedule/?favorites=active" data-ga-click="Top nav, click, cta_text: open favorites view">
-                <span class="heart">
-				            <svg viewBox="0 0 16 16" class="heart-icon">
-                      <path fill="#FFFFFF" d="M3.9,12.3c0.9,0.8,1.9,1.5,2.6,1.9c0.4,0.2,0.6,0.4,0.9,0.5c0.1,0.1,0.2,0.1,0.2,0.1c0,0,0.1,0,0.1,0l0,0
-                      	l0,0l0,0c0.2,0.1,0.5,0.1,0.7,0l0,0l0,0l0,0c0,0,0,0,0.1,0c0.1,0,0.1-0.1,0.2-0.1c0.2-0.1,0.5-0.3,0.9-0.5c0.7-0.4,1.6-1.1,2.6-1.9
-                      	c1.8-1.6,3.9-4,3.9-6.8C16,2.8,13.9,1,11.8,1C10.2,1,8.8,1.8,8,3C7.2,1.8,5.8,1,4.2,1C2.1,1,0,2.8,0,5.5C0,8.4,2,10.7,3.9,12.3z
-                      	 M4.2,2.5c1.4,0,2.6,1,3,2.5C7.4,5.3,7.7,5.5,8,5.5S8.6,5.3,8.7,5c0.4-1.5,1.7-2.5,3-2.5c1.3,0,2.8,1.2,2.8,3c0,2.1-1.6,4.1-3.4,5.7
-                      	c-0.9,0.8-1.7,1.4-2.4,1.8c-0.3,0.2-0.5,0.3-0.7,0.4c-0.2-0.1-0.4-0.3-0.7-0.4c-0.7-0.4-1.5-1-2.4-1.8C3.1,9.6,1.5,7.6,1.5,5.5
-                      	C1.5,3.7,2.9,2.5,4.2,2.5z"></path>
-                      <path class="heart-icon-fill" fill="#FF7170" d="M11.8,1C10.2,1,8.8,1.8,8,3C7.2,1.8,5.8,1,4.2,1C2.1,1,0,2.8,0,5.5c0,2.9,2,5.2,3.9,6.8
-                      	c0.9,0.8,1.9,1.5,2.6,1.9c0.4,0.2,0.6,0.4,0.9,0.5c0.1,0.1,0.2,0.1,0.2,0.1c0,0,0.1,0,0.1,0l0,0l0,0l0,0c0.2,0.1,0.5,0.1,0.7,0l0,0
-                      	l0,0l0,0c0,0,0,0,0.1,0c0.1,0,0.1-0.1,0.2-0.1c0.2-0.1,0.5-0.3,0.9-0.5c0.7-0.4,1.6-1.1,2.6-1.9c1.8-1.6,3.9-4,3.9-6.8
-                      	C16,2.8,13.9,1,11.8,1z"></path>
-                    </svg>
-                </span>
-                <span>Favorites</span>
-            </a>
 
-            <a class="icon-link ml-4 js-timezone-set" href="" data-modal-target="timezone-modal" data-ga-click="Top nav, click, cta_text: open timezone modal">
-                <svg *ngIf="loadingUserInfo" class="spinner" viewBox="0 0 50 50">
-                  <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                </svg>
-                <div class="avatar" *ngIf="!loadingUserInfo">
-                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" width="25" height="25">
-                </div>
-            </a>
-        </ng-container>
+        <a class="icon-link ml-1">
+            <div class="border-50 items">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
 
-        <ng-template #guest>
-            <a class="icon-link icon-link--heart is-disabled" href="/schedule/?favorites=active" data-ga-click="Top nav, click, cta_text: open favorites view">
-                <span class="heart">
-                    <svg iewBox="0 0 16 16" class="heart-icon"><path fill="#FFFFFF" d="M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z"/></svg>
+        <a class="icon-link ml-1">
+            <div class="border-50 items">
+                <i class="fas fa-bell"></i>
+            </div>
+        </a>
 
-                </span>
-                <span>Iniciar sesión</span>
-            </a>
-
-        </ng-template>
+        <a [routerLink]="['/profile', UserInfo.id]" class="icon-link ml-1">
+            <div class="border-50 items">
+                <span>{{ UserInfo.name }}</span> <img [src]="UserInfo.avatar" width="25" height="25">
+            </div>
+        </a>
 
     </div>
 
@@ -51,19 +30,19 @@
 
         <ul class="desktop-navigation">
             <li class="" data-ga-click="Top nav, click, cta_text: schedule">
-                <a href="/schedule/">Schedule</a>
+                <a routerLink="home">Inicio</a>
             </li>
 
             <li class="" data-ga-click="Top nav, click, cta_text: speakers">
-                <a href="/speakers/">Speakers</a>
+                <a routerLink="friends">Amigos</a>
             </li>
 
             <li class="" data-ga-click="Top nav, click, cta_text: sponsors">
-                <a href="/sponsors/">Sponsors</a>
+                <a routerLink="entertainment">Entretenimiento</a>
             </li>
 
             <li class="" data-ga-click="Top nav, click, cta_text: FAQ">
-                <a href="/faq/">FAQ</a>
+                <a routerLink="marketplace">Marketplace</a>
             </li>
 
             <li>
@@ -71,6 +50,7 @@
                     <span>Cerrar sesión</span>
                 </a>
             </li>
+
         </ul>
 
         <div class="burger js-menu-trigger">
@@ -78,88 +58,4 @@
             <span class="open"><svg height="24" class="octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x octicon octicon-x" viewBox="0 0 24 24" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z"></path></svg></span>
         </div>
     </div>
-
-    <nav class="navigation-drawer">
-        <div class="navigation__inner">
-            <ul class="mobile-navigation">
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: schedule">
-                    <a href="/schedule/">Schedule</a>
-                </li>
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: speakers">
-                    <a href="/speakers/">Speakers</a>
-                </li>
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: FAQ">
-                    <a href="/faq/">FAQ</a>
-                </li>
-
-                <li class=" is-active" data-ga-click="Mobile nav, click, cta_text: workshops">
-                    <a href="/workshops/">Workshops</a>
-                </li>
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: connect">
-                    <a href="/connect/">Connect</a>
-                </li>
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: swag">
-                    <a href="/swag/">Swag</a>
-                </li>
-
-                <li class="" data-ga-click="Mobile nav, click, cta_text: sponsors">
-                    <a href="/sponsors/">Sponsors</a>
-                </li>
-
-                <li>
-                    <a class="has-icon js-subscribe" href="#subscribe" data-ga-click="Mobile nav, click, cta_text: Subscribe">
-                        <svg height="15" class="octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail"
-                            viewBox="0 0 16 16" version="1.1" width="15" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z"></path></svg>
-                        <span>Subscribe</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="has-icon js-calendar" href="#add-to-calendar" data-ga-click="Mobile nav, click, cta_text: Add to keynote">
-                        <svg height="16" class="octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar"
-                            viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg>
-                        <span>Add keynote</span>
-                    </a>
-                </li>
-            </ul>
-
-            <hr>
-
-            <ul class="mobile-navigation mobile-navigation--sm">
-                <li>
-                    <a href="/code-of-conduct" data-ga-click="Mobile nav, click, cta_text: Code of conduct">Code of Conduct</a>
-                </li>
-                <li>
-                    <a href="/terms" data-ga-click="Mobile nav, click, cta_text: Terms">Terms</a>
-                </li>
-                <li>
-                    <a href="https://help.github.com/en/articles/github-privacy-statement" target="_blank" rel="noopener noreferrer" data-ga-click="Mobile nav, click, cta_text: Privacy policy">Privacy</a>
-                </li>
-                <li>
-                    <a href="https://event-sponsorship.github.com/events/universe/" target="_blank" rel="noopener noreferrer" data-ga-click="Mobile nav, click, cta_text: Event sponsorship">Event sponsorship</a>
-                </li>
-                <li>
-                    <a href="mailto:events@github.com" data-ga-click="Mobile nav, click, cta_text: email events@github.com">events@github.com</a>
-                </li>
-            </ul>
-
-
-            <div class="mobile-navigation__util d-none">
-                <a class="button js-subscribe" href="#subscribe" data-ga-click="Mobile nav, click, cta_text: Subscribe button">
-                    <svg height="15" class="octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail octicon octicon-mail"
-                        viewBox="0 0 16 16" version="1.1" width="15" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z"></path></svg>
-                    <span>Subscribe</span>
-                </a>
-                <a class="button js-calendar" href="#add-to-calendar" data-ga-click="Mobile nav, click, cta_text: add keynote button">
-                    <svg height="16" class="octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar octicon octicon-calendar"
-                        viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg>
-                    <span>Add keynote</span>
-                </a>
-            </div>
-        </div>
-    </nav>
 </header>

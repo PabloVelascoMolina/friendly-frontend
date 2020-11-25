@@ -1,0 +1,50 @@
+.people-search {
+    background: #000000d4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.content-story {
+    background: #ffffff1f;
+    width: 450px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.content-story>img {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.content-story-info {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #000 0, rgba(0, 0, 0, 0) 300px);
+    width: 450px;
+    height: 100%;
+}
+
+.content-story-box {
+    position: absolute;
+    bottom: 28px;
+    left: 32px;
+    width: 388px;
+}
+
+span.content-story-box-name {
+    font-size: 26px;
+    font-family: Averange;
+}

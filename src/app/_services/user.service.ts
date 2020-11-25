@@ -16,4 +16,12 @@ export class UserService {
   getUser() {
     return this.http.get<User[]>(`${environment.apiUrl}/api/user`);
   }
+
+  getUsersRandom() {
+    return this.http.get<User[]>(`${environment.apiUrl}/api/randomusers`);
+  }
+
+  getUserProfile( id: number) {
+    return this.http.get<User[]>(`${environment.apiUrl}/api/profile/${id}`);
+  }
 }

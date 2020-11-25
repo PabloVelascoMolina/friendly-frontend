@@ -1,4 +1,6 @@
-<app-navbar></app-navbar>
+<ng-container *ngIf="isAuthenticated;">
+    <app-navbar></app-navbar>
+</ng-container>
 <div class="container mx-auto" style="margin-top: 140px;">
     <router-outlet></router-outlet>
 </div>
