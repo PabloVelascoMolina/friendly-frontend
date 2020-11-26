@@ -11,7 +11,7 @@
     <div class="col-md-8" *ngIf="PostLoading == false">
         <div class="posts" *ngFor="let item of Post">
             <div class="postBy">
-                <img [src]="item.image" width="20" height="20">
+                <img [src]="item.image | noimage:0" width="20" height="20">
                 <p>{{ item.description }}</p>
             </div>
             <div class="postContent">

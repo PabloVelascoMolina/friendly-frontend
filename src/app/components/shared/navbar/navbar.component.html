@@ -15,14 +15,14 @@
 
         <a [routerLink]="['/profile', UserInfo.id]" class="icon-link ml-1">
             <div class="border-50 items">
-                <span>{{ UserInfo.name }}</span> <img [src]="UserInfo.avatar" width="25" height="25">
+                <span>{{ UserInfo.name }}</span> <img [src]="UserInfo.avatar | noimage:0" width="25" height="25">
             </div>
         </a>
 
     </div>
 
     <div class="site-header__inner container-wide">
-        <div class="site-branding" itemscope="" itemtype="http://schema.org/Organization">
+        <div class="site-branding">
             <a href="/">
                 <h1 class="logo">amiwos</h1>
             </a>

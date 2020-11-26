@@ -22,6 +22,7 @@ import { ModalComponent } from './components/shared/modal/modal.component';
 import { DontputPipe } from './_pipes/dontput.pipe';
 import { PostsComponent } from './components/shared/posts/posts.component';
 import { PlanComponent } from './components/shared/plan/plan.component';
+import { NoimagePipe } from './_pipes/noimage.pipe';
 
 @NgModule({
 	declarations: [
@@ -38,6 +39,7 @@ import { PlanComponent } from './components/shared/plan/plan.component';
 		DontputPipe,
 		PostsComponent,
 		PlanComponent,
+		NoimagePipe,
 	],
 	imports: [
 		BrowserModule,
