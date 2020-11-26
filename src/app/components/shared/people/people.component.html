@@ -1,20 +1,16 @@
 <div class="row">
     <h3 class="titleComponent">Personas que quizás te interesen</h3>
     <div class="col-md-12">
-        <div class="text-center">
-            <svg *ngIf="RandomPeopleLoading" class="spinner" viewBox="0 0 50 50">
-              <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-            </svg>
+
+        <div *ngIf="RandomPeopleLoading">
+            <ngx-skeleton-loader count="9" animation="pulse" [theme]="{'border-radius': '5px',height: '180px',width: '120px','margin-right': '3px','background-color': '#31343e'}"></ngx-skeleton-loader>
         </div>
 
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="grid-story">
-
+            <div class="grid-story" *ngIf="RandomPeopleLoading == false">
                 <div class="story" *ngFor="let user of RandomPeople">
-
-
                     <div class="mx-auto content-story" [routerLink]="['/profile', user.id]">
                         <img [src]="user.avatar | noimage:1" width="120" height="180">
                         <div class="content-story-info">

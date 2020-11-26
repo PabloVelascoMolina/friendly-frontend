@@ -25,8 +25,9 @@ export class PlanComponent implements OnInit {
   PlanLoading: boolean;
 
   constructor() {
+    this.PlanLoading = true;
     setTimeout(() => {
-      this.PlanLoading = false;
+      this.PlanLoading = true;
     }, 3500);
   }
 

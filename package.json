@@ -23,6 +23,7 @@
     "@thisissoon/angular-infinite-scroll": "^2.1.0",
     "angular-archwizard": "^6.1.0",
     "bootstrap": "^4.5.3",
+    "ngx-skeleton-loader": "^2.6.0",
     "rxjs": "~6.5.4",
     "rxjs-compat": "^6.6.3",
     "tailwindcss": "^1.9.6",

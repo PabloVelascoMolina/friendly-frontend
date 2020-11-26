@@ -1,7 +1,10 @@
 <div>
+    <div *ngIf="PlanLoading">
+        <ngx-skeleton-loader count="3" animation="pulse" [theme]="{'border-radius': '5px',height: '50px','background-color': '#31343e'}"></ngx-skeleton-loader>
+    </div>
+
     <div class="plan">
-        <div *ngIf="PlanLoading" [@gamesSkeletonAnimation]>
-            Test
+        <div *ngIf="PlanLoading == false" [@gamesSkeletonAnimation]>
         </div>
     </div>
 </div>
