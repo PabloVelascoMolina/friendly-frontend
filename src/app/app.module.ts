@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
@@ -19,6 +20,8 @@ import { PeopleComponent } from './components/shared/people/people.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { DontputPipe } from './_pipes/dontput.pipe';
+import { PostsComponent } from './components/shared/posts/posts.component';
+import { PlanComponent } from './components/shared/plan/plan.component';
 
 @NgModule({
 	declarations: [
@@ -33,6 +36,8 @@ import { DontputPipe } from './_pipes/dontput.pipe';
 		ProfileComponent,
 		ModalComponent,
 		DontputPipe,
+		PostsComponent,
+		PlanComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -40,7 +45,8 @@ import { DontputPipe } from './_pipes/dontput.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
