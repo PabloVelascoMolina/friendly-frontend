@@ -1,6 +1,5 @@
-<div class="profile-cover"></div>
+<div class="overlay-header" [style.backgroundImage]="'url('+ coverTest +')'"></div>
 <div class="row">
-    <h3 class="titleComponent">Perfil</h3>
     <div class="col-md-12" *ngIf="userProfileLoading">
         <div class="text-center">
             <svg class="spinner" viewBox="0 0 50 50">
@@ -8,7 +7,23 @@
             </svg>
         </div>
     </div>
-    <div class="col-md-12" *ngIf="userProfileLoading == false">
-        <p>{{ user.email }}</p>
+    <div class="col-md-12 mt-2" *ngIf="userProfileLoading == false">
+        <div *ngIf="UserInfo.id == routeId; else other">
+            <div class="avatarUploader-3XDtmn">
+                <div class="avatarUploaderInner-3UNxY3 avatarUploaderInner-2EvNMg" [style.backgroundImage]="'url('+ imgURL +')'">
+                    <div class="avatarUploaderHint-3SN212">Cambiar avatar
+                    </div><input class="fileInput-23-d-3" #file name="file" id="file" (change)="fileEvent($event);updatedAvatar();preview(file.files);" type="file" tabindex="0" multiple="" accept=".jpg,.jpeg,.png,.gif" aria-label="Cambiar avatar" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                    <div class="avatarUploaderIndicator-2G-aIZ" style="background-image: url(assets/img/upload-image.svg);"></div>
+                </div>
+            </div>
+
+        </div>
+        <ng-template #other>
+            <div class="image-avatar" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
+        </ng-template>
+        <div class="name">
+            <h1>{{ user.name }}</h1>
+        </div>
+        <app-posts [id]="user.id"></app-posts>
     </div>
 </div>

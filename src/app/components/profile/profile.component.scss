@@ -1,6 +1,147 @@
-.profile-cover:after {
+.overlay-header {
+    height: 303px;
+    margin: -235px 0 0 -25%;
+    transform: rotate(-2deg);
+    width: 150%;
+    position: absolute;
+    z-index: -9;
+    background-color: #0000008a;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay-header::before {
+    background-color: #0000008a;
     content: " ";
-    background: #FFF;
-    width: 100%;
-    height: 200px;
+    height: 312px;
+    margin: -2px 0 0 -25%;
+    transform: rotate(0deg);
+    width: 150%;
+    position: absolute;
+    z-index: -9;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.image-avatar {
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.avatarUploader-3XDtmn {
+    text-align: left;
+    font-size: 12px;
+}
+
+.avatarUploaderInner-3UNxY3:focus-within,
+.avatarUploaderInner-3UNxY3:hover {
+    -webkit-box-shadow: inset 0 0 120px rgba(0, 0, 0, .75);
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, .75);
+}
+
+.avatarUploaderInner-2EvNMg {
+    width: 80px;
+    height: 80px;
+}
+
+.avatarUploaderInner-3UNxY3 {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #7289da;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow .1s;
+    transition: -webkit-box-shadow .1s;
+    transition: box-shadow .1s;
+    transition: box-shadow .1s, -webkit-box-shadow .1s;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.avatarUploaderInner-3UNxY3:focus-within .avatarUploaderHint-3SN212,
+.avatarUploaderInner-3UNxY3:hover .avatarUploaderHint-3SN212 {
+    visibility: visible;
+}
+
+.avatarUploaderHint-3SN212 {
+    visibility: hidden;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 12px;
+    white-space: pre;
+}
+
+.avatarUploaderInner-3UNxY3 .fileInput-23-d-3,
+.avatarUploaderInner-3UNxY3 input[type=file] {
+    pointer-events: auto;
+}
+
+.avatarUploaderInner-3UNxY3>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    pointer-events: none;
+    color: #fff;
+}
+
+.avatarUploaderIndicator-2G-aIZ {
+    background-color: #dcddde;
+}
+
+.avatarUploaderIndicator-2G-aIZ {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.name {
+    position: absolute;
+    top: 31px;
+    margin-left: 200px;
 }

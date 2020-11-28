@@ -30,7 +30,8 @@ p {
 p,
 button,
 label,
-.btn {
+.btn,
+.alert {
     font-family: Averange;
 }
 
@@ -1498,4 +1499,10 @@ main.no-top {
 [tooltip][flow^="right"]:hover::before,
 [tooltip][flow^="right"]:hover::after {
     animation: tooltips-horz 300ms ease-out forwards;
+}
+
+.alert-danger {
+    background-color: #310707 !important;
+    border-color: #440b0b !important;
+    color: #a7434c !important;
 }

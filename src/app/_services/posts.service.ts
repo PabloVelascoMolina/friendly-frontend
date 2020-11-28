@@ -13,4 +13,8 @@ export class PostsService {
   getAllPosts() {
     return this.http.get<Post[]>(`${environment.apiUrl}/api/posts`);
   }
+
+  getAllPostsById(id: number) {
+    return this.http.get<Post[]>(`${environment.apiUrl}/api/posts/${id}`);
+  }
 }

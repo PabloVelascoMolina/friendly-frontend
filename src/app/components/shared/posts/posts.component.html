@@ -7,14 +7,19 @@
     </div>
 
     <div class="col-md-8">
+        <div *ngIf="ErrorDisplay">
+            <div class="alert alert-danger" role="alert">
+                {{ ErrorDisplayText }}
+            </div>
+        </div>
         <div *ngIf="PostLoading">
             <ngx-skeleton-loader count="1" animation="pulse" [theme]="{'border-radius': '5px',height: '500px','background-color': '#31343e'}"></ngx-skeleton-loader>
         </div>
         <div *ngIf="PostLoading == false">
             <div class="posts" *ngFor="let item of Post">
                 <div class="postBy">
-                    <img [src]="item.image | noimage:0" class="img-responsive center-block" width="20" height="20">
-                    <p>Username</p>
+                    <img [src]="item.user_id | avatar | async | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
+                    <p>{{ item.user_id | username | async }}</p>
                 </div>
                 <div class="postContent">
                     <div *ngIf="item.image !== ''" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>

@@ -15,7 +15,7 @@
                         <div class="image-cover" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
                         <div class="content-story-info">
                             <div class="content-story-box">
-                                <span class="content-story-box-name"><img width="25" height="25" [src]="user.avatar | noimage:0"> {{ user.name }}</span>
+                                <span class="content-story-box-name"><img width="25" height="25" [src]="user.id | avatar | async | noimage:0" draggable="false"> {{ user.name }}</span>
                             </div>
                         </div>
                     </div>
