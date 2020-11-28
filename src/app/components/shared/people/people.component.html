@@ -12,7 +12,7 @@
             <div class="grid-story" *ngIf="RandomPeopleLoading == false">
                 <div class="story" *ngFor="let user of RandomPeople">
                     <div class="mx-auto content-story" [routerLink]="['/profile', user.id]">
-                        <img [src]="user.avatar | noimage:1" width="120" height="180">
+                        <div class="image-cover" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
                         <div class="content-story-info">
                             <div class="content-story-box">
                                 <span class="content-story-box-name"><img width="25" height="25" [src]="user.avatar | noimage:0"> {{ user.name }}</span>

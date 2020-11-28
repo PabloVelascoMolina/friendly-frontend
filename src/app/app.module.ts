@@ -25,6 +25,7 @@ import { DontputPipe } from './_pipes/dontput.pipe';
 import { PostsComponent } from './components/shared/posts/posts.component';
 import { PlanComponent } from './components/shared/plan/plan.component';
 import { NoimagePipe } from './_pipes/noimage.pipe';
+import { PhotoComponent } from './components/shared/register/photo/photo.component';
 
 @NgModule({
 	declarations: [
@@ -42,6 +43,7 @@ import { NoimagePipe } from './_pipes/noimage.pipe';
 		PostsComponent,
 		PlanComponent,
 		NoimagePipe,
+		PhotoComponent,
 	],
 	imports: [
 		BrowserModule,

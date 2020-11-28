@@ -14,10 +14,10 @@
             <div class="posts" *ngFor="let item of Post">
                 <div class="postBy">
                     <img [src]="item.image | noimage:0" class="img-responsive center-block" width="20" height="20">
-                    <p>{{ item.description }}</p>
+                    <p>Username</p>
                 </div>
                 <div class="postContent">
-                    <img [src]="item.image" class="img-fluid" draggable="false">
+                    <div *ngIf="item.image !== ''" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>
                     <div class="postDescription pt-3 pl-3 pr-3">
                         <p>{{ item.description }}</p>
                         <p>

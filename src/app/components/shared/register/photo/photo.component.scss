@@ -1,0 +1,53 @@
+.image-avatar-upload {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+hr {
+    background: #fff;
+}
+
+#file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.labelUpload {
+    background: #0000004a;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.iconUpload {
+    position: absolute;
+    top: 73px;
+    left: 25px;
+}
+
+.info {
+    color: #ffffff5e !important;
+    text-align: left;
+}
+
+.image-preview {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}

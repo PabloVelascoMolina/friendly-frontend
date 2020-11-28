@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef, AfterViewChecked, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 
 import { AuthenticationService } from './_services/authentication.service';
 import { HttpLoaderService } from './_services/http-loader.service';
@@ -32,6 +32,15 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.httpLoaderService.asObservable().subscribe((e) => (this.state = e));
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart && this.isAuthenticated) {
+        if (this.currentUser.avatar == '' && event.url !== '/register/photo') {
+          this.router.navigate(['/register/photo']);
+        } else if (event.url == '/register/photo' && this.currentUser.avatar !== '') {
+          this.router.navigate(['/home']);
+        }
+      }
+    })
   }
 
 

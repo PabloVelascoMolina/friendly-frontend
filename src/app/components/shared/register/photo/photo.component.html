@@ -1,0 +1,32 @@
+<div class="row">
+
+    <div class="col-md-12">
+
+        <h3 class="titleComponent">Elige tu foto de perfil</h3>
+
+        <div class="row mt-5 justify-content-center h-10">
+
+            <div class="col-md-4 align-self-center text-center">
+
+                <div class="imageSelected mx-auto">
+                    <div *ngIf="!imgURL" class="image-preview" style="background-image: url(assets/img/no-photo.png)"></div>
+                    <div *ngIf="imgURL" class="image-preview" [style.backgroundImage]="'url('+ imgURL +')'"></div>
+                </div>
+            </div>
+
+            <div class="col-md-8 align-self-center text-center">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <input type="file" #file accept='image/*' name="file" id="file" (change)="fileEvent($event); preview(file.files)" class="text-light mb-3 inputUpload"><br>
+                    <p class="info">Tu decides como compartes tus cosas con las personas y aplicaciones de <b>amiwos</b></p>
+                    <label for="file" class="text-light labelUpload"><i class="fas fa-cloud-upload-alt iconUpload"></i> {{ uploadText }}</label>
+                    <button class="btn btn-primary btn-block" [disabled]="disabled"><i class="fas fa-camera"></i> Agregar foto</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

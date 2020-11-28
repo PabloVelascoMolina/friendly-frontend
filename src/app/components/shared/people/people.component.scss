@@ -75,3 +75,16 @@ span.content-story-box-name {
     -o-border-radius: 50%;
     margin-right: 3px;
 }
+
+.image-cover {
+    width: 120px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

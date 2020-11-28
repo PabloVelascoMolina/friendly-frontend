@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/register/photo';
           this.router.navigate([returnUrl]);
         },
         error: error => {
