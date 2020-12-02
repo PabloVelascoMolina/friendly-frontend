@@ -8,13 +8,17 @@ import { Post } from '../_models/post';
 
 export class PostsService {
 
-  constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) { }
 
-  getAllPosts() {
-    return this.http.get<Post[]>(`${environment.apiUrl}/api/posts`);
-  }
+	getAllPosts() {
+		return this.http.get<Post[]>(`${environment.apiUrl}/posts`);
+	}
 
-  getAllPostsById(id: number) {
-    return this.http.get<Post[]>(`${environment.apiUrl}/api/posts/${id}`);
-  }
+	getAllPostsById(id: number) {
+		return this.http.get<Post[]>(`${environment.apiUrl}/posts/${id}`);
+	}
+
+	getPhotosProfile(id: number) {
+		return this.http.get<any>(`${environment.apiUrl}/photos/${id}`);
+	}
 }

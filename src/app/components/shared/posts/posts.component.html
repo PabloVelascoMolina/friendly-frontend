@@ -37,7 +37,12 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" *ngIf="id === undefined else InfoUser">
         <app-plan></app-plan>
     </div>
+    <ng-template #InfoUser>
+        <div class="col-md-4">
+            <app-photos [id]="id"></app-photos>
+        </div>
+    </ng-template>
 </div>

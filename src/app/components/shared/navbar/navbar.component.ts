@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../../_services/authentication.service';
 import { UserService } from '../../../_services/user.service';
+import { CreateComponent } from '../posts/create/create.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +11,15 @@ import { UserService } from '../../../_services/user.service';
 export class NavbarComponent {
 
   UserInfo: any = {};
+  @ViewChild('CreatePostModal', { static: false }) CreatePostModal: CreateComponent;
+
 
   constructor(private userService: UserService, private authService: AuthenticationService) {
       this.UserInfo = this.authService.currentUserValue;
+  }
+
+  openModal() {
+    this.CreatePostModal.open();
   }
 
   logout() {

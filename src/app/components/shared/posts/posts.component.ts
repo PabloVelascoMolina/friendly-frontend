@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { PostsService } from '../../../_services/posts.service';
-
 
 @Component({
   selector: 'app-posts',
@@ -13,12 +12,12 @@ export class PostsComponent implements OnInit {
   ErrorDisplay: boolean;
   Post: any[] = [];
   @Input() id: number;
+
   ErrorDisplayText: string;
 
   constructor(private _postService: PostsService) { }
 
   ngOnInit(): void {
-
     if (this.id !== undefined) {
       this.GetPostsById(this.id);
     } else {
@@ -26,6 +25,7 @@ export class PostsComponent implements OnInit {
     }
 
   }
+
 
   GetPosts() {
     this.PostLoading = true;

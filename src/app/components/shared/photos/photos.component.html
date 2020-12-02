@@ -1,0 +1,5 @@
+<div class="photos-container">
+    <div *ngFor="let photo of Photos" [style.backgroundImage]="'url('+ photo.image +')'">
+        <div *ngIf="photo.image.length > 0"></div>
+    </div>
+</div>

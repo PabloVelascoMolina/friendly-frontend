@@ -28,6 +28,8 @@ import { NoimagePipe } from './_pipes/noimage.pipe';
 import { PhotoComponent } from './components/shared/register/photo/photo.component';
 import { UsernamePipe } from './_pipes/username.pipe';
 import { AvatarPipe } from './_pipes/avatar.pipe';
+import { PhotosComponent } from './components/shared/photos/photos.component';
+import { CreateComponent } from './components/shared/posts/create/create.component';
 
 @NgModule({
 	declarations: [
@@ -48,6 +50,8 @@ import { AvatarPipe } from './_pipes/avatar.pipe';
 		PhotoComponent,
 		UsernamePipe,
 		AvatarPipe,
+		PhotosComponent,
+		CreateComponent,
 	],
 	imports: [
 		BrowserModule,

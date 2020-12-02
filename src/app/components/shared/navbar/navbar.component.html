@@ -1,7 +1,7 @@
 <header class="site-header" id="site-header">
     <div class="site-header__utility">
 
-        <a class="icon-link ml-1">
+        <a class="icon-link ml-1" (click)="openModal()">
             <div class="border-50 items" tooltip="Crear" flow="down">
                 <i class="fas fa-plus"></i>
             </div>
@@ -59,3 +59,5 @@
         </div>
     </div>
 </header>
+
+<app-create #CreatePostModal></app-create>

@@ -10,18 +10,18 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    return this.http.get<Product[]>(`${environment.apiUrl}/api/products`);
+    return this.http.get<Product[]>(`${environment.apiUrl}/products`);
   }
 
   getUser() {
-    return this.http.get<User[]>(`${environment.apiUrl}/api/user`);
+    return this.http.get<User[]>(`${environment.apiUrl}/user`);
   }
 
   getUsersRandom() {
-    return this.http.get<User[]>(`${environment.apiUrl}/api/randomusers`);
+    return this.http.get<User[]>(`${environment.apiUrl}/randomusers`);
   }
 
   getUserProfile( id: number) {
-    return this.http.get<User[]>(`${environment.apiUrl}/api/profile/${id}`);
+    return this.http.get<User[]>(`${environment.apiUrl}/profile/${id}`);
   }
 }
