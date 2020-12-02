@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
 
     formData.append('image', this.FileData);
 
-    this.http.post(`${environment.apiUrl}/api/upload-photo`, formData, {
+    this.http.post(`${environment.apiUrl}/upload-photo`, formData, {
       headers: headers
     }).subscribe((data: any) => {
       this.authService.currentUser.subscribe(x => this.currentUser = x);
