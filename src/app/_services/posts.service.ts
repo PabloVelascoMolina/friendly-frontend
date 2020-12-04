@@ -15,7 +15,7 @@ export class PostsService {
 	}
 
 	getAllPostsById(id: number) {
-		return this.http.get<Post[]>(`${environment.apiUrl}/posts/${id}`);
+		return this.http.get<Post[]>(`${environment.apiUrl}/posts-by/${id}`);
 	}
 
 	getPhotosProfile(id: number) {

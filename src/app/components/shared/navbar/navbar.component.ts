@@ -20,6 +20,8 @@ export class NavbarComponent {
 
   openModal() {
     this.CreatePostModal.open();
+    let modal = document.querySelector('.create-modal');
+    modal.classList.add("showModal");
   }
 
   logout() {

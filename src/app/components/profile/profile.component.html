@@ -8,6 +8,7 @@
         </div>
     </div>
     <div class="col-md-12 mt-2" *ngIf="userProfileLoading == false">
+        <!--<button (click)="openModal()">Cambiar foto</button>-->
         <div *ngIf="UserInfo.id == routeId; else other">
             <div class="avatarUploader-3XDtmn">
                 <div class="avatarUploaderInner-3UNxY3 avatarUploaderInner-2EvNMg" [style.backgroundImage]="'url('+ imgURL +')'">
@@ -16,7 +17,6 @@
                     <div class="avatarUploaderIndicator-2G-aIZ" style="background-image: url(assets/img/upload-image.svg);"></div>
                 </div>
             </div>
-
         </div>
         <ng-template #other>
             <div class="image-avatar" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
@@ -27,3 +27,5 @@
         <app-posts [id]="user.id"></app-posts>
     </div>
 </div>
+
+<app-cropper-image-modal #CreateCropperImageModal></app-cropper-image-modal>

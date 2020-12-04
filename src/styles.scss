@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap);
 body {
     background-color: rgb(26, 29, 41) !important;
 }
@@ -25,6 +26,10 @@ p {
 .logo {
     font-family: Amiwos;
     font-size: 40px;
+}
+
+button {
+    outline: none;
 }
 
 p,
@@ -132,11 +137,11 @@ footer .links a:hover {
 
 
 /*!
- *
- *         This bundle was built at Mon, 16 Nov 2020 16:05:31 GMT / UTC Time.
- *         Version: 530c840f848569f77ff3abc69fb70f065e71649d_1605537530042
- *
- */
+*
+*         This bundle was built at Mon, 16 Nov 2020 16:05:31 GMT / UTC Time.
+*         Version: 530c840f848569f77ff3abc69fb70f065e71649d_1605537530042
+*
+*/
 
 * {
     box-sizing: border-box
@@ -309,7 +314,7 @@ textarea {
     -webkit-appearance: none
 }
 
-::-webkit-file-upload-button {
+ ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit
 }
@@ -1351,9 +1356,9 @@ main.no-top {
     text-align: center;
     text-transform: uppercase;
     /*
-    Let the content set the size of the tooltips
-    but this will also keep them from being obnoxious
-    */
+Let the content set the size of the tooltips
+but this will also keep them from being obnoxious
+*/
     min-width: 3em;
     max-width: 21em;
     white-space: nowrap;
@@ -1505,4 +1510,75 @@ main.no-top {
     background-color: #310707 !important;
     border-color: #440b0b !important;
     color: #a7434c !important;
+}
+
+.cropper::after {
+    border: 0 !important;
+}
+
+.info-icon {
+    z-index: 9;
+    font-size: 0;
+    border-radius: 100%;
+    border: 1px solid transparent !important;
+    position: relative;
+}
+
+.button {
+    font-family: Roboto, sans-serif;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    outline: none !important;
+}
+
+.info-icon:hover .info-tip {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-tip {
+    transition: .3s;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    top: -60px;
+    left: 0;
+    min-width: 284px;
+    position: absolute;
+    background: #313540;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 13px 10px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #9b99ad !important;
+    cursor: default;
+    outline: none;
+}
+
+.info-tip strong {
+    color: #fda018;
+    font-weight: 700;
+}
+
+.overly {
+    width: 100% !important;
+    height: 100% !important;
+    margin-left: 0 !important;
+    background: #000 !important;
+    border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    -ms-border-radius: 5px !important;
+    -o-border-radius: 5px !important;
 }

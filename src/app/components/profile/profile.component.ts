@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
@@ -6,6 +6,8 @@ import { AuthenticationService } from '../../_services/authentication.service';
 import { UserService } from '../../_services/user.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../../_models/user';
+import { CropperImageModalComponent } from '../shared/modal/cropper-image-modal/cropper-image-modal.component';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -13,6 +15,7 @@ import { User } from '../../_models/user';
 })
 export class ProfileComponent implements OnInit {
 
+  @ViewChild('CreateCropperImageModal', { static: false }) CreateCropperImageModal: CropperImageModalComponent;
   user: { id: '', name: '', email: '', avatar: ''};
   userProfileLoading: boolean;
   coverTest: string;
@@ -96,4 +99,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  openModal() {
+    this.CreateCropperImageModal.open();
+  }
 }

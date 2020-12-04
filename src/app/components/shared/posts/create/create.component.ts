@@ -12,6 +12,8 @@ export class CreateComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let ini = document.querySelector('.create-modal');
+    ini.classList.add("hideModal");
 
   }
 
@@ -21,6 +23,8 @@ export class CreateComponent implements OnInit {
 
   close() {
     this.modal.nativeElement.style.display = 'none';
+    let m = document.querySelector('.create-modal');
+    m.classList.remove("showModal");
   }
 
 }

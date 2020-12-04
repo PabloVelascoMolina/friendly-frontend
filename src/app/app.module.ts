@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
@@ -30,6 +30,7 @@ import { UsernamePipe } from './_pipes/username.pipe';
 import { AvatarPipe } from './_pipes/avatar.pipe';
 import { PhotosComponent } from './components/shared/photos/photos.component';
 import { CreateComponent } from './components/shared/posts/create/create.component';
+import { CropperImageModalComponent } from './components/shared/modal/cropper-image-modal/cropper-image-modal.component';
 
 @NgModule({
 	declarations: [
@@ -52,6 +53,7 @@ import { CreateComponent } from './components/shared/posts/create/create.compone
 		AvatarPipe,
 		PhotosComponent,
 		CreateComponent,
+		CropperImageModalComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -61,6 +63,7 @@ import { CreateComponent } from './components/shared/posts/create/create.compone
     ReactiveFormsModule,
     InfiniteScrollModule,
     BrowserAnimationsModule,
+    ImageCropperModule,
     NgxSkeletonLoaderModule.forRoot(),
   ],
   providers: [
