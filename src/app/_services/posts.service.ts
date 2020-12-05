@@ -23,8 +23,8 @@ export class PostsService {
 		return this.http.get<any>(`${environment.apiUrl}/photos/${id}`);
 	}
 
-  getAddedPost(description: string, category: string, image: string, user_id: number) {
-    return this.http.post<any>(`${environment.apiUrl}/posts`, { description, category, image, user_id })
+  getAddedPost(description: string, category: string, image: string, user_id: number, headers: any) {
+    return this.http.post<any>(`${environment.apiUrl}/posts`, { description, category, image, user_id }, { headers })
       .pipe(map(post => {
           return post;
       }));

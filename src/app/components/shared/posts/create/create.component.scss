@@ -259,3 +259,26 @@ form {
     font-size: 15px !important;
     margin-bottom: 13px !important;
 }
+
+.image-preview {
+    width: 75px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.inputUpload {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
