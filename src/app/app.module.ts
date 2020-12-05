@@ -6,6 +6,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { ToastrModule } from 'ngx-toastr';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
@@ -64,6 +65,12 @@ import { CropperImageModalComponent } from './components/shared/modal/cropper-im
     InfiniteScrollModule,
     BrowserAnimationsModule,
     ImageCropperModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      closeButton: true
+    }),
     NgxSkeletonLoaderModule.forRoot(),
   ],
   providers: [

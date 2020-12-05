@@ -126,7 +126,7 @@ footer .links a:hover {
 }
 
 .is-invalid {
-    border: 1px solid rgb(255, 85, 76);
+    border: 1px solid rgb(255, 85, 76) !important;
 }
 
 .card {
@@ -1581,4 +1581,59 @@ button:not(:disabled) {
     -moz-border-radius: 5px !important;
     -ms-border-radius: 5px !important;
     -o-border-radius: 5px !important;
+}
+
+.toast-container .ngx-toastr {
+    box-shadow: none !important;
+    font-family: 'Roboto', sans-serif;
+    background-image: none !important;
+    padding: 10px 15px 5px 15px !important;
+    width: 400px !important;
+    margin-top: 15px !important;
+}
+
+.toast-success {
+    background-color: #607d8b !important;
+}
+
+.toast-success::before {
+    position: absolute;
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f00c";
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.toast-error::before {
+    position: absolute;
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f071";
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.toast-warning::before {
+    position: absolute;
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f12a";
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.toast-info::before {
+    position: absolute;
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f129";
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+button.toast-close-button {
+    visibility: hidden;
+}
+
+.toast-message {
+    display: inline-block;
+    width: 330px;
+    margin-left: 28px;
 }

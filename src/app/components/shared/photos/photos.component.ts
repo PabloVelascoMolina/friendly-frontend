@@ -20,7 +20,7 @@ export class PhotosComponent implements OnInit {
 
   GetPhotos( id: number ) {
     this._postsService.getPhotosProfile(id).subscribe((photos: any) => {
-      this.Photos = photos.data;
+      this.Photos = photos.data.filter(element => element.image !== null);
     });
   }
 

@@ -4,7 +4,6 @@ import { Router, NavigationStart } from '@angular/router';
 import { AuthenticationService } from './_services/authentication.service';
 import { HttpLoaderService } from './_services/http-loader.service';
 import { User } from './_models/user';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,7 +29,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
     this.router.navigate(['/login']);
   }
 
-  ngOnInit() {
+  ngOnInit() : void {
     this.httpLoaderService.asObservable().subscribe((e) => (this.state = e));
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart && this.isAuthenticated) {

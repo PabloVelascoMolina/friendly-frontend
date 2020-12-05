@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { Post } from '../_models/post';
@@ -21,4 +22,11 @@ export class PostsService {
 	getPhotosProfile(id: number) {
 		return this.http.get<any>(`${environment.apiUrl}/photos/${id}`);
 	}
+
+  getAddedPost(description: string, category: string, image: string, user_id: number) {
+    return this.http.post<any>(`${environment.apiUrl}/posts`, { description, category, image, user_id })
+      .pipe(map(post => {
+          return post;
+      }));
+  }
 }

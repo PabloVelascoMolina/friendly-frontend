@@ -22,7 +22,7 @@
                     <p>{{ item.user_id | username | async }}</p>
                 </div>
                 <div class="postContent">
-                    <div *ngIf="item.image !== ''" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>
+                    <div *ngIf="item.image !== null" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>
                     <div class="postDescription pt-3 pl-3 pr-3">
                         <p>{{ item.description }}</p>
                         <p>

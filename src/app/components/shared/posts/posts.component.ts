@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { PostsService } from '../../../_services/posts.service';
 
 @Component({
@@ -24,6 +24,14 @@ export class PostsComponent implements OnInit {
       this.GetPosts();
     }
 
+  }
+
+  ngOnChanges() {
+    if (this.id !== undefined) {
+      this.GetPostsById(this.id);
+    } else {
+      this.GetPosts();
+    }
   }
 
 
