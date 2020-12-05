@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { first } from 'rxjs/operators';
 
 import { PostsService } from '../../../../_services/posts.service';
@@ -9,6 +9,9 @@ import { AuthenticationService } from '../../../../_services/authentication.serv
 import { NotificationService } from '../../../../_services/notification.service';
 import { NotificationType } from '../../../../_models/notification';
 import { LocationService } from '../../../../_services/location.service';
+import { TenorService } from '../../../../_services/tenor.service';
+import { environment } from '../../../../../environments/environment';
+
 
 @Component({
   selector: 'app-create',
@@ -32,12 +35,14 @@ export class CreateComponent implements OnInit {
   imgURL: any;
   public message: string;
   uploadText: string;
+  Tenor: any[] = [];
+  ViewTenorPanel: boolean;
 
   fileEvent(e) {
     this.FileData = e.target.files[0];
   }
 
-  constructor(private formBuilder: FormBuilder, private _postService: PostsService, private router: Router, private route: ActivatedRoute, private authService: AuthenticationService, private _notificationService: NotificationService, private _locationService: LocationService) {
+  constructor(private http: HttpClient, private formBuilder: FormBuilder, private _postService: PostsService, private _tenorService: TenorService, private router: Router, private route: ActivatedRoute, private authService: AuthenticationService, private _notificationService: NotificationService, private _locationService: LocationService) {
     this.UserInfo = this.authService.currentUserValue;
     this.uploadText = 'Cargar imagen...';
   }
@@ -47,8 +52,11 @@ export class CreateComponent implements OnInit {
     ini.classList.add("hideModal");
 
     this.postForm = this.formBuilder.group({
-      description: ['', [Validators.required, Validators.maxLength(350)]]
+      description: ['', [Validators.required, Validators.maxLength(350)]],
+      image: [null]
     });
+
+    this.TenorView();
 
   }
 
@@ -68,45 +76,28 @@ export class CreateComponent implements OnInit {
 
   onSubmit() {
 
-    var formData = new FormData();
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json');
+    console.log(this.postForm.value);
+    var formData: any = new FormData();
+    formData.append("description", this.postForm.get('description').value);
+    formData.append("image", this.postForm.get('image').value);
+    formData.append("category", this.contry);
+    formData.append("user_id", this.UserInfo.id);
 
-    formData.append('image', this.FileData);
-    if (this.FileData !== undefined) {
-      this.FileData = this.FileData;
-    } else {
-      this.FileData = null;
-    }
-
-
-    this.submitted = true;
-
-    if (this.postForm.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this._postService.getAddedPost(this.f.description.value, this.contry, this.FileData, this.UserInfo.id, { headers })
-      .pipe(first())
-      .subscribe({
-        next: (post) => {
-          this.onRefresh();
-          //this.close();
-          this._notificationService.sendMessage({
-            message: 'Has creado una nueva publicación.',
-            type: NotificationType.success,
-          });
-          //this.loading = false;
-          console.log(post);
-        },
-        error: error => {
-          this.error = error;
-          this.loading = false;
-          console.log(error);
-        }
-      });
+    this.http.post(`${environment.apiUrl}/posts`, formData).subscribe(
+      (response) => {
+        this.close();
+        this.onRefresh();
+        this._notificationService.sendMessage({
+          message: 'Has creado una nueva publicación.',
+          type: NotificationType.success,
+        });
+        this.loading = false;
+      },
+      (error) => {
+        this.error = error;
+        this.loading = false;
+      }
+    )
   }
 
   onRefresh() {
@@ -149,5 +140,19 @@ export class CreateComponent implements OnInit {
     reader.onload = (_event) => {
       this.imgURL = reader.result;
     }
+  }
+
+  uploadFile(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.postForm.patchValue({
+      image: file
+    });
+    this.postForm.get('image').updateValueAndValidity()
+  }
+
+  TenorView() {
+    this._tenorService.getTenorTrending().subscribe((data) => {
+      this.Tenor = data.results;
+    });
   }
 }

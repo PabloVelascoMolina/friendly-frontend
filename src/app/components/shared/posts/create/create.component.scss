@@ -147,10 +147,14 @@ span.content-story-box-name {
     border: none;
     background: transparent !important;
     outline: none;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .button-other-options>svg {
     width: 50px;
+    cursor: pointer;
 }
 
 .title {
@@ -276,9 +280,16 @@ form {
 }
 
 .inputUpload {
-    height: 50px;
     width: 50px;
-    position: absolute;
+    height: 50px;
     opacity: 0;
+    overflow: hidden;
+    position: absolute;
     cursor: pointer;
+}
+
+.tenor-view {
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
