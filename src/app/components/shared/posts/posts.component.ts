@@ -11,6 +11,8 @@ export class PostsComponent implements OnInit {
   PostLoading: boolean;
   ErrorDisplay: boolean;
   Post: any[] = [];
+  User: any[] = [];
+  CheckLiked: any[] = [];
   @Input() id: number;
 
   ErrorDisplayText: string;
@@ -56,4 +58,7 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  ConvertToJSON(product: any) {
+    return JSON.parse(product);
+  }
 }

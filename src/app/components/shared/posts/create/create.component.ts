@@ -75,8 +75,6 @@ export class CreateComponent implements OnInit {
   get f() { return this.postForm.controls; }
 
   onSubmit() {
-
-    console.log(this.postForm.value);
     var formData: any = new FormData();
     formData.append("description", this.postForm.get('description').value);
     formData.append("image", this.postForm.get('image').value);
@@ -85,13 +83,20 @@ export class CreateComponent implements OnInit {
 
     this.http.post(`${environment.apiUrl}/posts`, formData).subscribe(
       (response) => {
-        this.close();
-        this.onRefresh();
-        this._notificationService.sendMessage({
-          message: 'Has creado una nueva publicación.',
-          type: NotificationType.success,
-        });
-        this.loading = false;
+
+        if (this.description !== undefined) {
+          this.close();
+          this.onRefresh();
+          this._notificationService.sendMessage({
+            message: 'Has creado una nueva publicación.',
+            type: NotificationType.success,
+          });
+          this.loading = false;
+          this.description = '';
+        } else {
+          this.error = 'Escribe una descripción';
+          this.loading = false;
+        }
       },
       (error) => {
         this.error = error;
@@ -152,7 +157,7 @@ export class CreateComponent implements OnInit {
 
   TenorView() {
     this._tenorService.getTenorTrending().subscribe((data) => {
-      this.Tenor = data.results;
+      this.Tenor = data.data;
     });
   }
 }

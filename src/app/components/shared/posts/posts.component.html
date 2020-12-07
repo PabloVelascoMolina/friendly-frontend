@@ -18,17 +18,17 @@
         <div *ngIf="PostLoading == false">
             <div class="posts" *ngFor="let item of Post">
                 <div class="postBy">
-                    <img [src]="item.user_id | avatar | async | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
-                    <p>{{ item.user_id | username | async }}</p>
+                    <img [src]="item.info.avatar | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
+                    <p>{{ item.info.name }}</p>
                 </div>
                 <div class="postContent">
                     <div *ngIf="item.image !== null" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>
                     <div class="postDescription pt-3 pl-3 pr-3">
                         <p>{{ item.description }}</p>
                         <p>
-                            <i class="fas fa-heart"></i>
+                            <app-likes [postId]="item.id"></app-likes>
                             <i class="fas fa-comment pl-3"></i>
-                            <i class="fas fa-map-marker-alt pl-3 pr-1"></i> {{ item.category }}
+                            <span *ngIf="item.info.location_settings == 0"><i class="fas fa-map-marker-alt pl-3 pr-1"></i> {{ item.category }}</span>
                         </p>
                     </div>
                 </div>

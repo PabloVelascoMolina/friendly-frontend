@@ -32,6 +32,7 @@ import { AvatarPipe } from './_pipes/avatar.pipe';
 import { PhotosComponent } from './components/shared/photos/photos.component';
 import { CreateComponent } from './components/shared/posts/create/create.component';
 import { CropperImageModalComponent } from './components/shared/modal/cropper-image-modal/cropper-image-modal.component';
+import { LikesComponent } from './components/shared/posts/likes/likes.component';
 
 @NgModule({
 	declarations: [
@@ -55,6 +56,7 @@ import { CropperImageModalComponent } from './components/shared/modal/cropper-im
 		PhotosComponent,
 		CreateComponent,
 		CropperImageModalComponent,
+		LikesComponent,
 	],
 	imports: [
 		BrowserModule,

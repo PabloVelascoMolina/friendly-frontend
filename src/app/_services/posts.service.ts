@@ -29,4 +29,32 @@ export class PostsService {
           return post;
       }));
   }
+
+  getCheckLike(id: number) {
+    return this.http.post<any>(`${environment.apiUrl}/post-like-view/${id}`, { id })
+      .pipe(map(post => {
+        return post;
+      }));
+  }
+
+  getAddLike(id: number) {
+    return this.http.post<any>(`${environment.apiUrl}/post-like-add/${id}`, { id })
+      .pipe(map(post => {
+        return post;
+      }));
+  }
+
+  getCountLikes( id: number ) {
+    return this.http.post<any>(`${environment.apiUrl}/post-like-count/${id}`, { id })
+      .pipe(map(post => {
+        return post;
+      }));
+  }
+
+  getDeleteLike(id: number) {
+    return this.http.post<any>(`${environment.apiUrl}/post-like-remove/${id}`, { id })
+      .pipe(map(post => {
+        return post;
+      }));
+  }
 }
