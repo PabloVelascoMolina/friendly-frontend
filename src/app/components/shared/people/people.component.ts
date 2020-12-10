@@ -8,21 +8,31 @@ import { UserService } from '../../../_services/user.service';
 })
 export class PeopleComponent implements OnInit {
 
-  RandomPeople: any[] = [];
   RandomPeopleLoading: boolean;
+  images = []
 
   constructor(private userService: UserService) {
     this.GetRandomPeople();
   }
 
   ngOnInit(): void {
+
   }
 
   GetRandomPeople() {
       this.RandomPeopleLoading = true;
-      this.userService.getUsersRandom().subscribe((data) => {
-        this.RandomPeople = data;
+      this.userService.getUsersRandom().subscribe((data: any) => {
         this.RandomPeopleLoading = false;
+        data.forEach((user: any) => {
+          this.images.push({ "path": user.avatar, "name": user.name, "id": user.id });
+
+        });
       })
   }
+
+  handleCarouselEvents(i) {
+    console.log(i.path);
+  }
+
+
 }

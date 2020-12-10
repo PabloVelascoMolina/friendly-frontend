@@ -7,19 +7,22 @@
         </div>
 
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="grid-story" *ngIf="RandomPeopleLoading == false">
-                <div class="story" *ngFor="let user of RandomPeople">
-                    <div class="mx-auto content-story" [routerLink]="['/profile', user.id]">
-                        <div class="image-cover" [style.backgroundImage]="'url('+ user.avatar +')'"></div>
-                        <div class="content-story-info">
-                            <div class="content-story-box">
-                                <span class="content-story-box-name"><img width="25" height="25" [src]="user.id | avatar | async | noimage:0" draggable="false"> {{ user.name }}</span>
+
+    <div class="col-md-12">
+        <div *ngIf="RandomPeopleLoading == false">
+            <carousel [cellWidth]="120" [height]="180" [borderRadius]="5">
+                <div class="carousel-cell" *ngFor="let item of images">
+                    <a [routerLink]="['/profile', item.id]" class="content-story">
+                        <img [src]="item.path" draggable="false" style="object-fit: cover;border-radius:5px;">
+                        <div class="content-story-info ">
+                            <img class="content-story-image" width="25 " height="25 " [src]="item.path | noimage:0 " draggable="false ">
+                            <div class="content-story-box ">
+                                <span class="content-story-box-name d-inline-block text-truncate" style="max-width: 95px;">{{ item.name }}</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </div>
+            </carousel>
         </div>
+
     </div>

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ToastrModule } from 'ngx-toastr';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
@@ -78,6 +79,7 @@ import { OptionsComponent } from './components/shared/posts/options/options.comp
       closeButton: true
     }),
     NgxSkeletonLoaderModule.forRoot(),
+    IvyCarouselModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
