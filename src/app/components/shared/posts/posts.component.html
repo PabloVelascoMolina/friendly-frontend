@@ -15,7 +15,9 @@
         <div *ngIf="PostLoading">
             <ngx-skeleton-loader count="1" animation="pulse" [theme]="{'border-radius': '5px',height: '500px','background-color': '#31343e'}"></ngx-skeleton-loader>
         </div>
+
         <div *ngIf="PostLoading == false">
+
             <div class="posts" *ngFor="let item of Post">
                 <div class="postBy">
                     <img [routerLink]="'/profile/' + item.info.id" style="cursor: pointer;" [src]="item.info.avatar | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
@@ -40,6 +42,7 @@
                 </div>
             </div>
         </div>
+
 
     </div>
 

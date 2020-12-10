@@ -79,7 +79,7 @@ import { OptionsComponent } from './components/shared/posts/options/options.comp
       closeButton: true
     }),
     NgxSkeletonLoaderModule.forRoot(),
-    IvyCarouselModule,
+    IvyCarouselModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

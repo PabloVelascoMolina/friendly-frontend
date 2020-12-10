@@ -10,7 +10,7 @@
 
     <div class="col-md-12">
         <div *ngIf="RandomPeopleLoading == false">
-            <carousel [cellWidth]="120" [height]="180" [borderRadius]="5">
+            <carousel [cellWidth]="120" [height]="180" [borderRadius]="5" style="z-index: 0;">
                 <div class="carousel-cell" *ngFor="let item of images">
                     <a [routerLink]="['/profile', item.id]" class="content-story">
                         <img [src]="item.path" draggable="false" style="object-fit: cover;border-radius:5px;">

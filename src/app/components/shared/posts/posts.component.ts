@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { PostsService } from '../../../_services/posts.service';
+import { Post } from '../../../_models/post';
 import { AuthenticationService } from '../../../_services/authentication.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -8,9 +10,10 @@ import { AuthenticationService } from '../../../_services/authentication.service
 })
 export class PostsComponent implements OnInit {
 
+  public Post: Observable<any>;
+
   PostLoading: boolean;
   ErrorDisplay: boolean;
-  Post: any[] = [];
   User: any[] = [];
   UserInfo: any = {};
   CheckLiked: any[] = [];

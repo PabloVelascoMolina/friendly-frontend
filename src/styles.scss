@@ -24,6 +24,33 @@ p {
     src: url('assets/fonts/Metropolis-Regular.otf');
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 35px;
+}
+
+ ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+ ::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #0f1119;
+    background-clip: padding-box;
+    border-radius: 5rem;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #ffffff0d;
+    border-radius: 5rem;
+    border: 4px solid transparent;
+}
+
 .logo {
     font-family: Amiwos;
     font-size: 40px;

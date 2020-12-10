@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { Post } from '../_models/post';
@@ -11,7 +12,7 @@ export class PostsService {
 
 	constructor(private http: HttpClient) { }
 
-	getAllPosts() {
+  getAllPosts(): Observable<any> {
 		return this.http.get<Post[]>(`${environment.apiUrl}/posts`);
 	}
 
