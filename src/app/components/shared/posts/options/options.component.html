@@ -1,0 +1,31 @@
+<div class="dropdown-wrapper {{className}} {{isFocused ? 'focus':''}}" [ngClass]="{'is-open':isOpen, 'disabled':isReadOnly}" *ngIf="options" (contextmenu)="$event.stopPropagation();">
+    <div class="box" (click)="toggle($event)">
+        <ng-container>
+            <p><span class="ellipsis"><i class="fas fa-ellipsis-v"></i></span></p>
+        </ng-container>
+    </div>
+
+    <ul class="dropdown-options" *ngIf="options">
+        <li *ngIf="placeholder" (click)="$event.stopPropagation()">{{ placeholder }}</li>
+        <ng-container>
+            <li id="li{{i}}" *ngFor="let option of options; let i = index" [class.active]="selected === i" (click)="optionSelect(option, i, $event)">
+                <i [class]="'fas fa-' + option.icon"></i>
+
+                <span class="option-value">{{option.value }}</span>
+            </li>
+        </ng-container>
+
+    </ul>
+</div>
+
+<ng-container *ngIf="modalDelete == true">
+    <div class="create-modal">
+        <div class="create-overlay" (click)="modalDelete = false"></div>
+        <div class="create-wrapper">
+            <div class="title">¿Eliminar publicación?</div>
+            <button class="button-close" (click)="modalDelete = false"><i class="far fa-times-circle"></i></button>
+            <p>¿Seguro que quieres eliminar esta publicación?</p>
+            <button class="button-default" (click)="deletePost()">Eliminar</button>
+        </div>
+    </div>
+</ng-container>

@@ -11,6 +11,7 @@ h5,
 h6,
 p {
     color: rgb(249, 249, 249) !important;
+    outline: none;
 }
 
 @font-face {
@@ -38,6 +39,10 @@ label,
 .btn,
 .alert {
     font-family: Averange;
+}
+
+img {
+    outline: none;
 }
 
 footer {

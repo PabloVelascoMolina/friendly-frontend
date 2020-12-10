@@ -18,8 +18,14 @@
         <div *ngIf="PostLoading == false">
             <div class="posts" *ngFor="let item of Post">
                 <div class="postBy">
-                    <img [src]="item.info.avatar | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
-                    <p>{{ item.info.name }}</p>
+                    <img [routerLink]="'/profile/' + item.info.id" style="cursor: pointer;" [src]="item.info.avatar | noimage:0" class="img-responsive center-block" width="20" height="20" draggable="false">
+                    <p [routerLink]="'/profile/' + item.info.id" style="cursor: pointer;">{{ item.info.name }}</p>
+                    <div class="text-right post-date">
+                        <p>{{ item.created_at | timeagos }} </p>
+
+                        <app-options *ngIf="item.info.id === UserInfo.id" [options]="types" [id]="item.id"></app-options>
+
+                    </div>
                 </div>
                 <div class="postContent">
                     <div *ngIf="item.image !== null" class="cover-image" [style.backgroundImage]="'url('+ item.image +')'"></div>

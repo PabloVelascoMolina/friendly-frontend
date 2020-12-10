@@ -33,6 +33,8 @@ import { PhotosComponent } from './components/shared/photos/photos.component';
 import { CreateComponent } from './components/shared/posts/create/create.component';
 import { CropperImageModalComponent } from './components/shared/modal/cropper-image-modal/cropper-image-modal.component';
 import { LikesComponent } from './components/shared/posts/likes/likes.component';
+import { TimePipe } from './_pipes/time.pipe';
+import { OptionsComponent } from './components/shared/posts/options/options.component';
 
 @NgModule({
 	declarations: [
@@ -57,6 +59,8 @@ import { LikesComponent } from './components/shared/posts/likes/likes.component'
 		CreateComponent,
 		CropperImageModalComponent,
 		LikesComponent,
+		TimePipe,
+		OptionsComponent,
 	],
 	imports: [
 		BrowserModule,

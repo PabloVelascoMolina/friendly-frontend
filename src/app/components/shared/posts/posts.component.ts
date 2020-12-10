@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { PostsService } from '../../../_services/posts.service';
-
+import { AuthenticationService } from '../../../_services/authentication.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -12,12 +12,32 @@ export class PostsComponent implements OnInit {
   ErrorDisplay: boolean;
   Post: any[] = [];
   User: any[] = [];
+  UserInfo: any = {};
   CheckLiked: any[] = [];
   @Input() id: number;
 
   ErrorDisplayText: string;
 
-  constructor(private _postService: PostsService) { }
+  types = [
+    {
+      "id": "1",
+      "value": "Información",
+      "icon": "info-circle"
+    },
+    {
+      "id": "2",
+      "value": "Reportar",
+      "icon": "flag"
+    },
+    {
+      "id": "3",
+      "value": "Eliminar",
+      "icon": "trash"
+    }];
+
+  constructor(private _postService: PostsService, private authService: AuthenticationService) {
+    this.UserInfo = this.authService.currentUserValue;
+  }
 
   ngOnInit(): void {
     if (this.id !== undefined) {
@@ -53,7 +73,7 @@ export class PostsComponent implements OnInit {
         this.ErrorDisplay = true;
         return this.ErrorDisplayText = posts.error;
       }
-      this.Post = posts;
+      this.Post = posts.data;
       this.PostLoading = false;
     });
   }

@@ -57,4 +57,11 @@ export class PostsService {
         return post;
       }));
   }
+
+  getDeletePost(id: number) {
+    return this.http.delete<any>(`${environment.apiUrl}/posts/${id}`)
+      .pipe(map(remove => {
+        return remove;
+      }));
+  }
 }
