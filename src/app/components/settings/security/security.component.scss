@@ -49,6 +49,11 @@
     box-shadow: 0 0 10px rgba(108, 198, 68, .5);
 }
 
+.session-device .session-state-indicator.others {
+    background-color: #d00303;
+    box-shadow: 0 0 10px rgb(255 173 173 / 50%);
+}
+
 .session-device .btn {
     float: right;
     margin-top: 4px;
