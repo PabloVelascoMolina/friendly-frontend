@@ -1334,7 +1334,7 @@ main.no-top {
 }
 
 .titleComponent {
-    margin-left: 7px;
+    margin-left: 17px;
     margin-bottom: 25px;
     position: relative;
 }
@@ -1667,4 +1667,11 @@ button.toast-close-button {
     display: inline-block;
     width: 330px;
     margin-left: 28px;
+}
+
+.p-mini {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    color: #c9d1d9 !important;
+    font-size: 14px;
+    line-height: 1.5;
 }

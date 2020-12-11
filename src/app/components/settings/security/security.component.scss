@@ -1,0 +1,133 @@
+.Box-row--gray {
+    background-color: #0d111761;
+}
+
+.Box {
+    background-color: #0d111761;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+.Box-row {
+    padding: 16px;
+    margin-top: -1px;
+    list-style-type: none;
+    border-top: 1px solid #21262d;
+}
+
+.Box-row:first-of-type {
+    border-top-color: transparent;
+}
+
+.Box-row:last-of-type {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.Box-row:first-of-type {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.session-device {
+    position: relative;
+    padding: 15px;
+    line-height: 18px;
+    color: #8b949e;
+}
+
+.session-device .session-state-indicator {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.session-device .session-state-indicator.recent {
+    background-color: #2ea043;
+    box-shadow: 0 0 10px rgba(108, 198, 68, .5);
+}
+
+.session-device .btn {
+    float: right;
+    margin-top: 4px;
+}
+
+.btn-sm {
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 16px;
+    font-size: 14px !important;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn {
+    color: #c9d1d9;
+    background-color: #21262d;
+    border-color: #30363d;
+    transition: .2s cubic-bezier(.3, 0, .5, 1);
+    transition-property: color, background-color, border-color;
+    -webkit-transition: .2s cubic-bezier(.3, 0, .5, 1);
+    -moz-transition: .2s cubic-bezier(.3, 0, .5, 1);
+    -ms-transition: .2s cubic-bezier(.3, 0, .5, 1);
+    -o-transition: .2s cubic-bezier(.3, 0, .5, 1);
+}
+
+.btn.hover,
+.btn:hover,
+[open]>.btn {
+    background-color: #30363d;
+    border-color: #8b949e;
+    transition-duration: .1s;
+}
+
+.session-device .session-icon {
+    float: left;
+    width: 32px;
+    margin-top: 1px;
+    margin-left: 15px;
+    color: #bbb;
+    text-align: center;
+}
+
+.tooltipped {
+    position: relative;
+}
+
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
+
+.session-details {
+    margin-left: 70px;
+}
+
+.text-gray {
+    color: #8b949e!important;
+}
+
+small {
+    font-size: 90%;
+}

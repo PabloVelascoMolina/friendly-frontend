@@ -50,3 +50,12 @@ span.content-story-box-name {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
+.content-story-box:hover,
+.content-story-image:hover {
+    transform: scale(1.05, 1.05) !important;
+    -webkit-transform: scale(1.05, 1.05) !important;
+    -moz-transform: scale(1.05, 1.05) !important;
+    -ms-transform: scale(1.05, 1.05) !important;
+    -o-transform: scale(1.05, 1.05) !important;
+}

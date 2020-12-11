@@ -36,6 +36,10 @@ import { CropperImageModalComponent } from './components/shared/modal/cropper-im
 import { LikesComponent } from './components/shared/posts/likes/likes.component';
 import { TimePipe } from './_pipes/time.pipe';
 import { OptionsComponent } from './components/shared/posts/options/options.component';
+import { AppearanceComponent } from './components/settings/appearance/appearance.component';
+import { NavComponent } from './components/settings/nav/nav.component';
+import { HomeSettingsComponent } from './components/settings/home.component';
+import { SettingsSecurityComponent } from './components/settings/security/security.component';
 
 @NgModule({
 	declarations: [
@@ -62,6 +66,10 @@ import { OptionsComponent } from './components/shared/posts/options/options.comp
 		LikesComponent,
 		TimePipe,
 		OptionsComponent,
+		AppearanceComponent,
+		NavComponent,
+    HomeSettingsComponent,
+    SettingsSecurityComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,0 +1,39 @@
+.details-reset>summary {
+    list-style: none;
+}
+
+details summary {
+    cursor: pointer;
+}
+
+summary {
+    display: list-item;
+}
+
+.avatar-user {
+    border-radius: 50%!important;
+}
+
+.avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    border-radius: 6px;
+    width: 200px;
+    height: 200px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.octicon {
+    vertical-align: text-bottom;
+}
+
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}

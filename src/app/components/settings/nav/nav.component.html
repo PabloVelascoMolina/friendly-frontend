@@ -1,0 +1,16 @@
+<nav class="menu position-relative" aria-label="Personal settings" data-pjax="">
+
+    <div class="menu-heading d-flex flex-items-center">
+        <img width="32" height="32" [src]="UserInfo.avatar" class="avatar avatar-user mr-2">
+
+        <div class="flex-1 lh-condensed">
+            <div class="f5 text-gray-dark text-bold css-truncate css-truncate-target">{{ UserInfo.name }}</div>
+            <div class="f6 text-gray text-normal">Configuraciones personales</div>
+        </div>
+    </div>
+
+    <a class="menu-item" routerLink="/settings/profile" routerLinkActive="selected">Perfil</a>
+    <a class="menu-item d-flex flex-justify-between flex-items-center" routerLinkActive="selected" routerLink="/settings/appearance">Apariencia<span title="Label: New" class="Label Label--green ">Nuevo</span></a>
+    <a class="menu-item d-flex flex-justify-between flex-items-center" routerLinkActive="selected" routerLink="/settings/security">Seguridad</a>
+
+</nav>
